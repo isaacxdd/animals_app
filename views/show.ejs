@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%=animal.name%></h1>
+    <p>specie: <%=animal.specie%></p>
+    <p>Completed: <%=animal.completed%></p>
+
+
+    <form method="POST" action="/animals/<%=animal._id%>?_method=DELETE">
+        <input type="submit" value="delete animal"/>
+    </form>
+
+    <a href="/animals/<%=animal._id%>/edit"> 
+        <button>edit</button>
+    </a>
+</body>
+</html>
