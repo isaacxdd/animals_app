@@ -5,17 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+         body{
+        background-image: url("https://hips.hearstapps.com/hmg-prod/images/cute-baby-animals-1558535060.jpg?crop=1.00xw:0.669xh");
+        background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+    }
+    </style>
 </head>
 <body>
-    <h1>Create New animal</h1>
-    <form method="POST" action="/animals" >
-        specie: <input type="text" name="name" />
-        <br/>
-        name: <input type="text" name="specie" />
-        <br/>
-        Completed: <input type="checkbox" name="completed" />
-        <br/>
-        <input type="submit" name="" value="Add animal"/>
-    </form>
+    <h1 >Create a New Animal</h1>
+    <div>
+        <form method="post" action="/animal" >
+            <label>Species<br><input type="text" name="species" /></label><br>
+            <label>Location<br><input type="text" name="location" /></label><br>
+            <label> LifeExpectancy<br><input type="number" name="lifeExpectancy" /></label><br>
+            <label> Extinct<input type="checkbox" name="extinct"  /></label><br>
+            <div>
+                <input class= "submits" type="submit"  value="Add Animal"/>
+                <a href="/animal"><button>Home Page</button></a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

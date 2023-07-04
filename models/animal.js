@@ -1,15 +1,14 @@
 const mongoose = require('./connection');
 
 const animalSchema = new mongoose.Schema({
-    // title: String,
-    // author: String,
-    // completed: Boolean
 
-    name: { type: String, required: true},
-    specie: { type: String, required: true},
-    completed: Boolean
-});
+    species:String,
+    extinct:Boolean,
+    location:String,
+    lifeExpectancy:Number,
+    color:String
+})
 
-const animal = mongoose.model('animal', animalSchema);
+const dataModel = mongoose.model('animal', animalSchema);
 
-module.exports = animal;
+module.exports = dataModel;

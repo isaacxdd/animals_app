@@ -4,20 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    span{
+        font-size: 30px;
+        color: purple;
+        font-weight: 700;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    li{
+list-style: none;
+padding: 10px;
+    }
+    a{
+        text-decoration: none;
+    }
+    li:hover{ color:red; cursor:pointer}
+    body{
+        background-image: url("https://hips.hearstapps.com/hmg-prod/images/cute-baby-animals-1558535060.jpg?crop=1.00xw:0.669xh");
+        background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+    }
+    button{
+        font-size: 20px;
+    }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="/animals/new">Add an animal</a>
-    </nav>
-    <h1>Animals</h1>
-    <ul>
-        <% animals.forEach(animal => { %>
-            <li>
-                <a href="/animals/<%=animal._id %>" >
-                    <%=animal.name %>
-                </a>
-            </li>
-        <% }) %>
-    </ul>
+    <div>
+        <ul><span> list of Animals</span>
+         <% totalAnimals.forEach((animal, index)=>{%>
+          <a href="/animal/<%= animal._id%>"><li> <%= animal.species%></li></a>
+            <% })%>
+        </ul>
+        <a href="/animal/new"><button>add animal</button></a>
+    </div>
 </body>
 </html>

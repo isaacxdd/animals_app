@@ -4,19 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+         body{
+        background-image: url("https://hips.hearstapps.com/hmg-prod/images/cute-baby-animals-1558535060.jpg?crop=1.00xw:0.669xh");
+        background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+    }
+    li{
+        text-decoration: none;
+        list-style: none;
+        padding: 10px;
+        font-size: 20px;
+        text-align: center;
+    }
+    h2{
+       text-align: center;
+    }
+    .links{
+        display: inline-flex;
+    }
+    </style>
 </head>
 <body>
-    <h1><%=animal.name%></h1>
-    <p>specie: <%=animal.specie%></p>
-    <p>Completed: <%=animal.completed%></p>
-
-
-    <form method="POST" action="/animals/<%=animal._id%>?_method=DELETE">
-        <input type="submit" value="delete animal"/>
-    </form>
-
-    <a href="/animals/<%=animal._id%>/edit"> 
-        <button>edit</button>
-    </a>
+    <div>
+        <div class="links">
+            <a href="/animal/<%= oneAnimal._id%>/edit"><button>Edit</button></a>
+            <form action="/animal/<%= oneAnimal._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE"/>
+            </form>
+            <a href="/animal"><button>Home Page</button></a>
+        </div>
+        <h2> <%=oneAnimal.species %></h2>
+        <ul>
+            <li>Geographical location: <%=oneAnimal.location %></li>
+            <li>Extinct: <%=oneAnimal.extinct %></li>
+            <li>LifeExpectancy: <%=oneAnimal.lifeExpectancy %></li>
+        </ul>  
+    </div>
 </body>
 </html>

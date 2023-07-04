@@ -3,21 +3,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+         body{
+        background-image: url("https://hips.hearstapps.com/hmg-prod/images/cute-baby-animals-1558535060.jpg?crop=1.00xw:0.669xh");
+        background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+    }
+    h2{
+        color: aliceblue;
+        background-color: black;
+        padding: 10px;
+        text-align: center;
+    }
+    form{
+        background-color: rgba(103, 103, 103,0.5);
+        padding: 15px;
+        width: 170px;
+        margin-left: 750px;
+    }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="/animals">Back to the book list page</a>
-    </nav>
-
-    <form method="POST" action="/animals/<%=animal._id%>?_method=PUT"> 
-        <input type="text" name="specie" value="<%=animal.specie %>"/>
-        <br/>
-        <input type="text" name="name" value="<%=animal.name %>"/>
-        <br/>
-        <input type="checkbox" name="completed"  <%= animal.completed ? "checked" : "" %>/>
-        <br/>
-        <input type="submit" value="save edits" />
-    </form>
-    
+    <div class="main">
+        <h2>Edit</h2>
+        <form method="post" action="/animal/<%= oneAnimal._id%>?_method=PUT">
+            <label>Species<br><input type="text" name="species" value="<%=oneAnimal.species%>"  /></label><br>
+            <label>Location<br><input type="text" name="location"value="<%=oneAnimal.location%>" /></label><br>
+            <label> Life Expectancy<br><input type="number" name="lifeExpectancy" value="<%=oneAnimal.lifeExpectancy%>" /></label><br>
+            <label> Extinct<input type="checkbox" name="extinct" <%=oneAnimal.extinct ? "checked": "" %> /></label><br>
+            <div>
+                <input class="submits"type="submit"  value="Edit"/>
+                <a href="/animal"><button>Home Page</button></a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
